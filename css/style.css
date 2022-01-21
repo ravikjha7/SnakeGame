@@ -40,10 +40,12 @@
 }
 
 .head{
-    background: linear-gradient(rgb(240, 124, 124),rgb(228, 228, 129));
-    border: 2px solid rgb(34, 4, 34);
+    /* background: linear-gradient(rgb(240, 124, 124),rgb(228, 228, 129)); */
+    background-image: url("../img/snake-b.png");
+    background-size: cover;
+    /* border: 2px solid rgb(34, 4, 34); */
     border-radius: 9px;
-    transform: scale(1.02);
+    transform: scale(1.2);
 }
 
 .snake{
@@ -53,9 +55,10 @@
 }
 
 .food{
-    background: linear-gradient(red,purple);
-    /* background-image: url(../img/bg.jpg); */
-    border: .25vmin solid black;
+    /* background: linear-gradient(red,purple); */
+    background-image: url(../img/food.jpg);
+    background-size: cover;
+    /* border: .25vmin solid black; */
     border-radius: 15px;
-    transform: scale(0.8);
+    transform: scale(0.92);
 }
