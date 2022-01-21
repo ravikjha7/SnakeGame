@@ -37,6 +37,7 @@ function isCollide(snakeArr) {
 }
 
 function gameEngine() {
+    
     // Part 1 : Updating The Snake Array and Food
     if(isCollide(snakeArr)) {
         gameOverSound.play();
@@ -91,6 +92,18 @@ function gameEngine() {
         }
         board.appendChild(snakeElement);
     })
+    if(prevDir == "up") {
+    document.getElementsByClassName('head')[0].style.backgroundImage = "url('../img/snake-b.png')";
+    }
+    if(prevDir == "down") {
+        document.getElementsByClassName('head')[0].style.backgroundImage = "url('../img/snake-f.png')";
+    }
+    if(prevDir == "right") {
+        document.getElementsByClassName('head')[0].style.backgroundImage = "url('../img/snake-r.png')";
+    }
+    if(prevDir == "left") {
+        document.getElementsByClassName('head')[0].style.backgroundImage = "url('../img/snake-l.png')";
+    }
 
     // Display The Food
     foodElement = document.createElement('div');
@@ -131,6 +144,7 @@ window.addEventListener('keydown',e=>{
         case "ArrowUp" :
             if(prevDir!="down" || score == 0) {
             console.log("ArrowUp");
+            document.getElementsByClassName('head')[0].style.backgroundImage = "url('../img/snake-b.png')";
             inputDir.x = 0;
             inputDir.y = -1;
             prevDir = "up";
@@ -140,6 +154,7 @@ window.addEventListener('keydown',e=>{
         case "ArrowDown" :
             if(prevDir!="up" || score == 0) {
             console.log("ArrowDown");
+            document.getElementsByClassName("head")[0].style.backgroundImage = "url('../img/snake-f.png')";
             inputDir.x = 0;
             inputDir.y = 1;
             prevDir = "down";
@@ -149,6 +164,7 @@ window.addEventListener('keydown',e=>{
         case "ArrowLeft" :
             if(prevDir!="right" || score == 0) {
             console.log("ArrowLeft");
+            document.getElementsByClassName("head")[0].style.backgroundImage = "url('../img/snake-l.png')";
             inputDir.x = -1;
             inputDir.y = 0;
             prevDir = "left";
@@ -158,6 +174,7 @@ window.addEventListener('keydown',e=>{
         case "ArrowRight" :
             if(prevDir!="left" || score == 0) {
             console.log("ArrowRight");
+            document.getElementsByClassName("head")[0].style.backgroundImage = "url('../img/snake-r.png')";
             inputDir.x = 1;
             inputDir.y = 0;
             prevDir = "right";
